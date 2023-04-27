@@ -75,4 +75,4 @@ Planning organized on the following site:
 
 ### Diagram.draw.io
 This framework is used to describe the layout of the program. CLick the link to observe.
-<a href="https://app.diagrams.net/#G1jt1iNoBXriKQ5_wqbrIkgmz9Wz6s7M-e"></a>
+<a href="https://app.diagrams.net/#G1jt1iNoBXriKQ5_wqbrIkgmz9Wz6s7M-e"></a># blog-app
