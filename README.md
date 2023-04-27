@@ -1,6 +1,5 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -68,3 +67,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### Trello 
+
+
+### Diagram.draw.io
+This framework is used to describe the layout of the program. CLick the link to observe.
+<a href="https://app.diagrams.net/#G1jt1iNoBXriKQ5_wqbrIkgmz9Wz6s7M-e"></a>

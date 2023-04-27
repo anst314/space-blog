@@ -1,23 +1,26 @@
+import {useState} from 'react';
+import Blogs from './components/Blogs';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import AuthPage from './components/AuthPage';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [user, setUser] = useState(null);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       { user ? 
+      <>
+      {/* <NavBar user={user} setUser={setUser}/> */}
+      <Routes>
+        <Route path='/blogs' element={ <Blogs user={user} setUser={setUser}/> }/>
+        {/* <Route path='/orders' element={ <OrderHistoryPage user={user} setUser={setUser}/>  }/>
+        <Route path='/*' element={<Navigate to='/orders/new' />}/> */}
+      </Routes>
+      </>
+     : 
+      <AuthPage setUser={setUser}/>
+      }
     </div>
   );
 }
