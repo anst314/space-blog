@@ -70,7 +70,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 ### Trello 
-
+Planning organized on the following site:
+<a href="https://trello.com/b/LA8MnFpb/project-planning"></a>
 
 ### Diagram.draw.io
 This framework is used to describe the layout of the program. CLick the link to observe.
