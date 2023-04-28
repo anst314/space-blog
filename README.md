@@ -7,6 +7,7 @@ It allows users to read and post articles related to space astronomy.
 To run this application on your local machine, follow these steps:
 
 1. Clone repository to your local machine
+
 2. Install dependencies for the server:
 
 cd server
@@ -52,8 +53,11 @@ https://trello.com/b/LA8MnFpb/project-planning
 This framework is used to describe the layout of the program. CLick the link to observe.
 https://app.diagrams.net/#G1jt1iNoBXriKQ5_wqbrIkgmz9Wz6s7M-e
 
+### Lucid.app
+Backend schema diagram displayed on site:
+https://lucid.app/lucidchart/691c741a-b036-4df9-a05d-fb76bc0f481c/edit?beaconFlowId=BDB535B3A542DDF1&invitationId=inv_3f62aa70-e518-40f4-9f7f-3b7cbf7f8ea7&page=0_0#
+
 ## Known Issues
 
-## 
 
 ## Acknowledgements

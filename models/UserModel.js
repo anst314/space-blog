@@ -6,7 +6,7 @@ const blogSchema = new mongoose.Schema({
         required: true
     },
     // Thing of what you would want your blog to have 
-    img: {
+    comment: {
         type: String,
         required: true
     }
