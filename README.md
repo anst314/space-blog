@@ -1,78 +1,59 @@
-# Getting Started with Create React App
+# Space Blog using MERN Stack
 
+This is a space blog web application built using the MERN (MongoDB, Express.js, REACT, Node.js) stack.
+It allows users to read and post articles related to space astronomy.
 
-## Available Scripts
+## Installation
+To run this application on your local machine, follow these steps:
 
-In the project directory, you can run:
+1. Clone repository to your local machine
+2. Install dependencies for the server:
 
-### `npm start`
+cd server
+npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. Install dependencies for the client:
+cd ../client
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. Create '.env' file in the 'server' directory and add the following environment variables:
+DATABASE_URL=<your-database-url>
+JWT_SECRET=<your-jwt-secret>
 
-### `npm test`
+5. Start the server:
+npm run server
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. In separate terminal window, start the client:
+npm run client
 
-### `npm run build`
+7. Open your browser window and navigate to http://localhost:3000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
+* MongoDB: NoSQL database used to store articles, comments, and user information
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Express.js Server framework used to handle API requests and routing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* React.js CLient-side JavaScript library used to create the user interface
 
-### `npm run eject`
+* Node.js JavaScript runtime used to run the server-side code
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Mongoose: Object Data Modeling (ODM) library used to interact with MongoDB
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Redux: State management library used to manage global application state
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Bootstrap: Front-end CSS framework used to style the application
 
 
 ### Trello 
 Planning organized on the following site:
-<a href="https://trello.com/b/LA8MnFpb/project-planning"></a>
+https://trello.com/b/LA8MnFpb/project-planning
 
 ### Diagram.draw.io
 This framework is used to describe the layout of the program. CLick the link to observe.
-<a href="https://app.diagrams.net/#G1jt1iNoBXriKQ5_wqbrIkgmz9Wz6s7M-e"></a># blog-app
+https://app.diagrams.net/#G1jt1iNoBXriKQ5_wqbrIkgmz9Wz6s7M-e
+
+## Known Issues
+
+## 
+
+## Acknowledgements
