@@ -16,17 +16,17 @@ function SignUpForm({setUser}) {
     e.preventDefault(); 
     
     try {
-      console.log(formData)
       // data to be send to the backend to create a new user
       const userData = {
         name: formData.name,
         email: formData.email,
         password: formData.password
       }
-      console.log(userData)
       // returns a token with the user info
       const user = await signUp(userData); // user service
-      //setUser(user);
+      console.log('SignUpForm', user)
+
+      setUser(user);
 
     } catch (error) {
       setFormData({...formData, error: "Sign Up Failed - Try Again"})
