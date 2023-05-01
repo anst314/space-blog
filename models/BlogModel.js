@@ -1,16 +1,20 @@
 const mongoose = require('mongoose');
 
 const blogSchema = new mongoose.Schema({
-    name: {
+    content: {
         type: String,
         required: true
     },
     // Thing of what you would want your blog to have 
-    comment: {
+    subject: {
+        type: String,
+        required: true
+    },
+    userId: {
         type: String,
         required: true
     }
 })
 
-const Blogs = mongoose.model('Blogs', blogSchema);
-module.exports = Blogs;
+const Blog = mongoose.model('Blog', blogSchema);
+module.exports = Blog;

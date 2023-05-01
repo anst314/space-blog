@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const app = express()
 const User = require('./models/UserModel');
+const Blog = require('./models/BlogModel');
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -27,7 +28,25 @@ app.post('/api/users', function (req, res) {
     })
 
 })
-
+app.post('/api/createBlog', function (req, res) {
+  console.log(req.body)
+  //const newBlog = new Blog(req.body)
+  const newBlog = new Blog({
+    content: "This is a paragraph",
+    subject: "The Stars",
+    userId: "and123"
+  })
+  newBlog.save().then((blog) => {
+    console.log(blog)
+    res.send('My message here!') 
+  })
+})
+app.get('/api/blogs', function (req, res) {
+  Blog.find({}).then(function(blogs) {
+    console.log(blogs)
+    res.json({blogs})
+  })
+})
 app.listen(3001, () => {
     console.log('Server running...')
     mongoose.set('strictQuery', true)

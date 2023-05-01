@@ -1,7 +1,9 @@
 import { useState } from "react";
 import {signUp} from './utilities/users-service';
+import { useNavigate } from "react-router-dom";
 
 function SignUpForm({setUser}) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,6 +29,7 @@ function SignUpForm({setUser}) {
       console.log('SignUpForm', user)
 
       setUser(user);
+      navigate("/createblog");
 
     } catch (error) {
       setFormData({...formData, error: "Sign Up Failed - Try Again"})

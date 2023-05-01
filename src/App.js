@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import { useNavigate } from "react-router-dom";
 import Blogs from './components/Blogs';
 import CreateBlog from './components/CreateBlog';
 import { Routes, Route, Navigate } from 'react-router-dom';
@@ -8,13 +7,11 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const navigate = useNavigate();
   const [user, setUser] = useState(null);
   useEffect(() => {
     const token = localStorage.getItem('token')
     if (token) {
       setUser(token)
-      navigate("/createblog");
     }
   }, []);
   return (
