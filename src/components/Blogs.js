@@ -12,7 +12,14 @@ import { useEffect, useState } from "react";
         })
     }, [])
     return(
-        <div>Blogs</div>
+        <ul>
+        { blogs.map((blog) => {
+          return <li>{blog.userId},
+           {blog.subject}, 
+           {blog.content}</li>;
+          
+        })}
+      </ul>
     )
 
 }
