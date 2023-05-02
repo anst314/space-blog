@@ -29,7 +29,7 @@ function App() {
      : 
       <AuthPage setUser={setUser}/>
       }
-      <>
+      {/* <>
       <main>
         <header>
           <a href=""className="logo">Space Blog</a>
@@ -39,7 +39,7 @@ function App() {
           </nav>
         </header>
       </main>
-      </>
+      </> */}
     </div>
 
     

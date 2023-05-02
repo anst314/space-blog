@@ -10,7 +10,7 @@ function AuthPage({ setUser }) {
 
   return (
     <main 
-    className={styles.AuthPage}
+    //className={styles.AuthPage}
     >
       <h3 onClick={() => setShowLogin(!showLogin)}>
         {showLogin ? "Sign up" : "Sign in"}

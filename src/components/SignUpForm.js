@@ -44,7 +44,24 @@ function SignUpForm({setUser}) {
     <div>
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-            <label>Name</label>
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name" value={formData.name} onChange={handleChange}/>
+    </div>  
+    <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" value={formData.email} onChange={handleChange}/>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" value={formData.password} onChange={handleChange}/>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Confirm</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="confirm" value={formData.confirm} onChange={handleChange}/>
+  </div>
+  <button type="submit" disabled={disable} class="btn btn-primary">SignUp</button>
+            {/* <label>Name</label>
             <input type="text" name="name" value={formData.name} onChange={handleChange} required/>
             
             <label>Email</label>
@@ -56,7 +73,7 @@ function SignUpForm({setUser}) {
             <label>Confirm</label>
             <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required/>
 
-            <button type="submit" disabled={disable}>SIGN UP</button>
+            <button type="submit" disabled={disable}>SIGN UP</button> */}
         </form>
       </div>
 
