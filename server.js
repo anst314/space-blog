@@ -5,11 +5,16 @@ const mongoose = require('mongoose');
 const app = express()
 const User = require('./models/UserModel');
 const Blog = require('./models/BlogModel');
+const cors = require('cors');
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
+app.use(cors())
+
+app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 function createJWT(user) {
   return jwt.sign({user}, process.env.SECRET, {expiresIn: '24h'});
@@ -64,6 +69,9 @@ app.get('/api/blogs', function (req, res) {
     console.log(blogs)
     res.json({blogs})
   })
+})
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 app.listen(3001, () => {
     console.log('Server running...')
