@@ -7,6 +7,7 @@ const User = require('./models/UserModel');
 const Blog = require('./models/BlogModel');
 const cors = require('cors');
 const path = require('path');
+const PORT = process.env.PORT || 3001
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -30,6 +31,9 @@ app.post('/api/users', function (req, res) {
          const token = createJWT(user);
          console.log(token)
       res.json({token})
+    }).catch((err) => {
+      res.json({ token: "" })
+  
     })
 
 })
@@ -73,7 +77,7 @@ app.get('/api/blogs', function (req, res) {
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
-app.listen(3001, () => {
+app.listen(PORT, () => {
     console.log('Server running...')
     mongoose.set('strictQuery', true)
     // connect to mongodDB

@@ -44,6 +44,7 @@ npm run client
 
 * Bootstrap: Front-end CSS framework used to style the application
 
+* Heroku: Website host
 
 ### Trello 
 Planning organized on the following site:
@@ -61,3 +62,10 @@ https://lucid.app/lucidchart/691c741a-b036-4df9-a05d-fb76bc0f481c/edit?beaconFlo
 
 
 ## Acknowledgements
+References used to assist in the project:
+* https://github.com/AbeTavarez/MERN-infrastructure-P1
+* https://reactrouter.com/en/main/hooks/use-params
+* https://mongoosejs.com/docs/api/model.html#Model.findByIdAndUpdate()
+* https://jwt.io/
+* https://www.lucidchart.com/pages/er-diagrams?a=0
+* https://github.com/AbeTavarez/mern-app-deployment
