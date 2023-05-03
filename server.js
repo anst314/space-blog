@@ -6,6 +6,7 @@ const app = express()
 const User = require('./models/UserModel');
 const Blog = require('./models/BlogModel');
 const cors = require('cors');
+const path = require('path');
 
 var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
