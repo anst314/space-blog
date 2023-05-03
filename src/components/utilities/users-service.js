@@ -23,6 +23,7 @@ export function getToken() {
 //* Get User
 export function getUser() {
     const token = getToken();
+    return token
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
 

@@ -36,15 +36,25 @@ app.delete('/api/delete/:id', function (req, res) {
     res.send('deleting!')
   })
 })
+
+app.get('/api/blog/:id', function(req, res){
+  Blog.findById(req.params.id).then(function(data) {
+    console.log(data)
+    res.json(data)
+  })
+}) 
 app.post('/api/createBlog', function (req, res) {
   console.log(req.body)
   const newBlog = new Blog(req.body)
-  // const newBlog = new Blog({
-  //   content: "This is a paragraph",
-  //   subject: "The Stars",
-  //   userId: "and123"
-  // })
+  
   newBlog.save().then((blog) => {
+    console.log(blog)
+    res.send('My message here!') 
+  })
+})
+
+app.post('/api/editBlog/:id', function(req, res){
+  Blog.findByIdAndUpdate(req.params.id, req.body).then((blog) => {
     console.log(blog)
     res.send('My message here!') 
   })

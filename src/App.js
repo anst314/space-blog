@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import AuthPage from './components/AuthPage';
 import logo from './logo.svg';
 import './App.css';
+import EditBlog from './components/EditBlog';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path='/blogs' element={ <Blogs user={user} setUser={setUser}/> }/>
         <Route path='/createblog' element={ <CreateBlog user={user} setUser={setUser}/> }/>
+        <Route path='/edit/:id' element={ <EditBlog user={user} setUser={setUser}/> }/>
         {/* <Route path='/orders' element={ <OrderHistoryPage user={user} setUser={setUser}/>  }/>
         <Route path='/*' element={<Navigate to='/orders/new' />}/> */}
       </Routes>

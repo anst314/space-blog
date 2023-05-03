@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import jwt_decode from "jwt-decode";
-  
+import { useNavigate } from "react-router-dom"; 
+
   function Blogs({user}) {
+    const navigate = useNavigate();
     const [blogs, setBlogs] = useState([]);
     const decodedUser = jwt_decode(user)
     console.log(decodedUser)
+    
+    function handleEdit (id) {
+        navigate("/edit/" + id)
+    }
+
     function handleDelete(id) {
         console.log(id)
         fetch('/api/delete/' + id, {
@@ -31,8 +38,8 @@ import jwt_decode from "jwt-decode";
            {blog.subject}, 
            {blog.content}
            {decodedUser.user._id === blog.userId && <button onClick={() => handleDelete(blog._id)}>Delete</button>}
-           </li>;
-          
+           {decodedUser.user._id === blog.userId && <button onClick={() => handleEdit(blog._id)}>Edit</button>}
+           </li>;         
         })}
       </ul>
     )

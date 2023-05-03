@@ -24,6 +24,7 @@ function SignUpForm({setUser}) {
         email: formData.email,
         password: formData.password
       }
+      console.log(userData)
       // returns a token with the user info
       const user = await signUp(userData); // user service
       console.log('SignUpForm', user)
