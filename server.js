@@ -61,6 +61,24 @@ app.post('/api/createBlog', function (req, res) {
     res.send('My message here!') 
   })
 })
+app.post('/api/login', function(req, res){
+  User.findOne(req.body).then((user) => {
+    console.log(user)
+       console.log(user)
+       if(!user) {
+        res.json({ token: "" })
+        return
+       }
+       const token = createJWT(user);
+       console.log(token)
+    res.json({token})
+  }).catch((err) => {
+    res.json({ token: "" })
+
+  })
+
+})
+
 
 app.post('/api/editBlog/:id', function(req, res){
   Blog.findByIdAndUpdate(req.params.id, req.body).then((blog) => {

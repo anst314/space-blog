@@ -5,7 +5,7 @@ import LoginForm from "./LogInForm";
 //import Logo from "../../components/Logo/Logo";
 import styles from "./AuthPage.module.css";
 
-function AuthPage({ setUser }) {
+function AuthPage({ setUser, handleLogIn }) {
   const [showLogin, setShowLogin] = useState(true);
 
   return (
@@ -17,7 +17,7 @@ function AuthPage({ setUser }) {
       </h3>
 
       {showLogin ? (
-        <LoginForm setUser={setUser} />
+        <LoginForm handleLogIn={handleLogIn} />
       ) : (
         <SignUpForm setUser={setUser} />
       )}
