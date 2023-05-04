@@ -34,12 +34,18 @@ import { useNavigate } from "react-router-dom";
     return(
         <ul>
         { blogs.map((blog) => {
-          return <li>{blog.userId},
-           {blog.subject}, 
-           {blog.content}
-           {decodedUser.user._id === blog.userId && <button onClick={() => handleDelete(blog._id)}>Delete</button>}
-           {decodedUser.user._id === blog.userId && <button onClick={() => handleEdit(blog._id)}>Edit</button>}
-           </li>;         
+            return(
+                <div class="card mb-2">
+                <div class="card-body">
+        <h5 class="card-title">{blog.subject}</h5>
+        <p class="card-text">{blog.content}</p>
+        {decodedUser.user._id === blog.userId && <button style={{marginRight: "10px"}} onClick={() => handleDelete(blog._id)}>Delete</button>}
+        {decodedUser.user._id === blog.userId && <button onClick={() => handleEdit(blog._id)}>Edit</button>}
+  </div>
+
+
+                </div>
+            )
         })}
       </ul>
     )
