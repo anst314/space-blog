@@ -1,7 +1,7 @@
 # Space Blog using MERN Stack
 
 This is a space blog web application built using the MERN (MongoDB, Express.js, REACT, Node.js) stack.
-It allows users to read and post articles related to space astronomy.
+It allows users to read and post articles related to space and all things related. 
 
 ## Installation
 To run this application on your local machine, follow these steps:
@@ -59,7 +59,8 @@ Backend schema diagram displayed on site:
 https://lucid.app/lucidchart/691c741a-b036-4df9-a05d-fb76bc0f481c/edit?beaconFlowId=BDB535B3A542DDF1&invitationId=inv_3f62aa70-e518-40f4-9f7f-3b7cbf7f8ea7&page=0_0#
 
 ## Known Issues
-
+Styling improvements will be updated. The theme for the blog will be amended. Blog links will be implemented 
+for better user experience.
 
 ## Acknowledgements
 References used to assist in the project:
@@ -69,3 +70,9 @@ References used to assist in the project:
 * https://jwt.io/
 * https://www.lucidchart.com/pages/er-diagrams?a=0
 * https://github.com/AbeTavarez/mern-app-deployment
+* https://getbootstrap.com/docs/5.3/components/card/
+* https://getbootstrap.com/docs/5.3/layout/grid/
+* https://www.youtube.com/watch?v=dY_1Y6ehqoM&t=879s
+* https://courses.webdevsimplified.com/react-hooks-simplified
+* https://react-bootstrap.github.io/forms/overview/
+* https://blog.apilayer.com/crud-operations-what-is-crud/

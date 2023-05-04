@@ -18,60 +18,58 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')));
 
 function createJWT(user) {
-  return jwt.sign({user}, process.env.SECRET, {expiresIn: '24h'});
+  return jwt.sign({ user }, process.env.SECRET, { expiresIn: '24h' });
 }
 
 app.post('/api/users', function (req, res) {
-    console.log('Here')
-    console.log(req.body)
-    const newUser = new User(req.body)
-    newUser.save().then((user) => {
-      console.log(user)
-         //* creating a new jwt
-         const token = createJWT(user);
-         console.log(token)
-      res.json({token})
-    }).catch((err) => {
-      res.json({ token: "" })
-  
-    })
-
+  console.log('Here')
+  console.log(req.body)
+  const newUser = new User(req.body)
+  newUser.save().then((user) => {
+    console.log(user)
+    //* creating a new jwt
+    const token = createJWT(user);
+    console.log(token)
+    res.json({ token })
+  }).catch((err) => {
+    res.json({ token: "" })
+  })
 })
 
 app.delete('/api/delete/:id', function (req, res) {
   console.log(req.params)
-  Blog.findByIdAndDelete(req.params.id).then(function(data) {
+  Blog.findByIdAndDelete(req.params.id).then(function (data) {
     console.log(data)
     res.send('deleting!')
   })
 })
 
-app.get('/api/blog/:id', function(req, res){
-  Blog.findById(req.params.id).then(function(data) {
+app.get('/api/blog/:id', function (req, res) {
+  Blog.findById(req.params.id).then(function (data) {
     console.log(data)
     res.json(data)
   })
-}) 
+})
 app.post('/api/createBlog', function (req, res) {
   console.log(req.body)
   const newBlog = new Blog(req.body)
-  
+
   newBlog.save().then((blog) => {
     console.log(blog)
-    res.send('My message here!') 
+    res.send('My message here!')
   })
 })
-app.post('/api/login', function(req, res){
+app.post('/api/login', function (req, res) {
   User.findOne(req.body).then((user) => {
     console.log(user)
-       console.log(user)
-       if(!user) {
-        res.json({ token: "" })
-        return
-       }
-       const token = createJWT(user);
-       console.log(token)
-    res.json({token})
+    console.log(user)
+    if (!user) {
+      res.json({ token: "" })
+      return
+    }
+    const token = createJWT(user);
+    console.log(token)
+    res.json({ token })
   }).catch((err) => {
     res.json({ token: "" })
 
@@ -79,31 +77,30 @@ app.post('/api/login', function(req, res){
 
 })
 
-
-app.post('/api/editBlog/:id', function(req, res){
+app.post('/api/editBlog/:id', function (req, res) {
   Blog.findByIdAndUpdate(req.params.id, req.body).then((blog) => {
     console.log(blog)
-    res.send('My message here!') 
+    res.send('My message here!')
   })
 })
 app.get('/api/blogs', function (req, res) {
-  Blog.find({}).then(function(blogs) {
+  Blog.find({}).then(function (blogs) {
     console.log(blogs)
-    res.json({blogs})
+    res.json({ blogs })
   })
 })
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 app.listen(PORT, () => {
-    console.log('Server running...')
-    mongoose.set('strictQuery', true)
-    // connect to mongodDB
-    mongoose.connect(process.env.MONGO_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      })
-    mongoose.connection.once('open', () => {
-        console.log('Connected to MongoDB!')
-    })
+  console.log('Server running...')
+  mongoose.set('strictQuery', true)
+  // connect to mongodDB
+  mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  mongoose.connection.once('open', () => {
+    console.log('Connected to MongoDB!')
+  })
 })
